@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="cl.duoc.viviendas.vista.VentanaControl">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="Tipo" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbTipo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Código" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCodigo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Superficie (m2)" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtSuperficie" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Habitaciones" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtHabitaciones" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Piso" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPiso" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Gasto Común" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="chkGastoComun" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Label text="Estacionamiento" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="chkEstacionamiento" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+        <Label text="Patio" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="chkPatio" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Registrar Vivienda" onAction="#onRegistrar"/>
+
+    <TableView fx:id="tabla">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn fx:id="colTipo" text="Tipo"/>
+            <TableColumn fx:id="colCodigo" text="Código"/>
+            <TableColumn fx:id="colSuperficie" text="Superficie"/>
+            <TableColumn fx:id="colHabitaciones" text="Habitaciones"/>
+            <TableColumn fx:id="colCostoArriendo" text="Costo Arriendo"/>
+        </columns>
+    </TableView>
+
+    <Button text="Eliminar Vivienda" onAction="#onEliminar"/>
+    <Label fx:id="lblMensaje"/>
+</VBox>
